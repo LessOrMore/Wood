@@ -497,7 +497,6 @@
     <Content Include="Scripts\User\tytabs.js" />
     <Content Include="Scripts\User\waypoints.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\UserIndex\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
