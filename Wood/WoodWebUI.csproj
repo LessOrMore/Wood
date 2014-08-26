@@ -160,6 +160,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AdminIndexController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
+    <Compile Include="Controllers\UserAboutController.cs" />
+    <Compile Include="Controllers\UserConnectUsController.cs" />
     <Compile Include="Controllers\UserIndexController.cs" />
     <Compile Include="Controllers\UserProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -486,7 +488,10 @@
     <Content Include="Scripts\User\tytabs.js" />
     <Content Include="Scripts\User\waypoints.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\UserAbout\about.html" />
+    <Content Include="Views\UserConnectUs\contact.html" />
     <Content Include="Views\UserProduct\portfolio-four.html" />
+    <Content Include="Views\UserProduct\portfolio-single.html" />
     <Content Include="Views\UserProduct\ProductDetails.cshtml">
       <SubType>Code</SubType>
     </Content>
@@ -506,6 +511,9 @@
     <Content Include="Views\AdminIndex\Right.cshtml" />
     <Content Include="Views\ViewShare\_Layout.cshtml" />
     <Content Include="Views\UserIndex\Index.cshtml" />
+    <Content Include="Views\UserProduct\ProductInfo.cshtml" />
+    <Content Include="Views\UserConnectUs\ConnectUs.cshtml" />
+    <Content Include="Views\UserAbout\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
