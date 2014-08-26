@@ -161,6 +161,7 @@
     <Compile Include="Controllers\AdminIndexController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
     <Compile Include="Controllers\UserIndexController.cs" />
+    <Compile Include="Controllers\UserProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -328,19 +329,6 @@
     <Content Include="Content\images\user\patterns\tileable_wood.png" />
     <Content Include="Content\images\user\patterns\wall.png" />
     <Content Include="Content\images\user\patterns\whitey.png" />
-    <Content Include="Content\images\user\portfolio\portfolio-1.jpg" />
-    <Content Include="Content\images\user\portfolio\portfolio-10.jpg" />
-    <Content Include="Content\images\user\portfolio\portfolio-11.jpg" />
-    <Content Include="Content\images\user\portfolio\portfolio-12.jpg" />
-    <Content Include="Content\images\user\portfolio\portfolio-2.jpg" />
-    <Content Include="Content\images\user\portfolio\portfolio-3.jpg" />
-    <Content Include="Content\images\user\portfolio\portfolio-4.jpg" />
-    <Content Include="Content\images\user\portfolio\portfolio-5.jpg" />
-    <Content Include="Content\images\user\portfolio\portfolio-6.jpg" />
-    <Content Include="Content\images\user\portfolio\portfolio-7.jpg" />
-    <Content Include="Content\images\user\portfolio\portfolio-8.jpg" />
-    <Content Include="Content\images\user\portfolio\portfolio-9.jpg" />
-    <Content Include="Content\images\user\portfolio\single-portfolio-image.jpg" />
     <Content Include="Content\images\user\prettyPhoto\dark_rounded\btnNext.png" />
     <Content Include="Content\images\user\prettyPhoto\dark_rounded\btnPrevious.png" />
     <Content Include="Content\images\user\prettyPhoto\dark_rounded\contentPattern.png" />
@@ -466,6 +454,7 @@
     <Content Include="Content\styles\user\fonts\font-awesome\font\fontawesome-webfontf77b.eot" />
     <Content Include="Content\styles\user\fonts\font-awesome\font\fontawesome-webfontf77b.ttf" />
     <Content Include="Content\styles\user\fonts\font-awesome\font\fontawesome-webfontf77b.woff" />
+    <Content Include="App_Data\数据库表.xls" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -497,6 +486,10 @@
     <Content Include="Scripts\User\tytabs.js" />
     <Content Include="Scripts\User\waypoints.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\UserProduct\portfolio-four.html" />
+    <Content Include="Views\UserProduct\ProductDetails.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -515,7 +508,6 @@
     <Content Include="Views\UserIndex\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

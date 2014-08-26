@@ -2082,7 +2082,8 @@ ul#projects-carousel {
 
 .portfolio-item img {
 	display:block;
-	width: 100%;
+	width: 252px;
+    height:189px;
 }
 
 .fullscreen {
@@ -2127,6 +2128,10 @@ ul#projects-carousel {
     background: url("../../images/user/bg_off.png") repeat;
     border: 1px solid #DDDDDD;
     border-radius: 3px;
+}
+.post-body img {
+    width:257px;
+    height:193px;
 }
 
 .portfolio-item-link span.portfolio-item-hover, .post-item-link span.post-item-hover, .img-hover {

@@ -101,7 +101,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="sf-with-ul">
+                                <a href="@Url.Content("~/UserProduct/ProductDetails")" class="sf-with-ul">
                                     产品展示
                                     <span class="sf-sub-indicator">
                                         <i class="icon-angle-down "></i>
@@ -172,12 +172,58 @@
             <!-- Main Header End -->
         </header>
         <!-- Header End -->
-        <!-- Scroll To Top -->
+
         <a href="#" class="scrollup"><i class="icon-angle-up"></i></a>
     </div>
 
     <div style="z-index:-999999">
         @RenderBody()
     </div>
+
+
+    <footer id="footer">
+        <!-- Footer Top Start -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <section class="col-lg-3 col-md-3 col-xs-12 col-sm-3 footer-one">
+                        <h3>关于我们</h3>
+                        <p>
+                            马化腾木业集团是一家集生态园林的开发、生产、应用，生态园林的规划、设计、施工、养护、苗木、室外防腐木生产销售、设计施工园林防腐木景观、防腐木仿古建筑景观等为一体的综合性园林企业。
+                        </p>
+                    </section>
+                    <section class="col-lg-3 col-md-3 col-xs-12 col-sm-3 footer-two">
+                        <h3></h3>
+                        <ul id="tweets"></ul>
+                    </section>
+                    <section class="col-lg-3 col-md-3 col-xs-12 col-sm-3 footer-three">
+                        <h3>联系我们</h3>
+                        <ul class="contact-us">
+                            <li>
+                                <i class="icon-map-marker"></i>
+                                <p>
+                                    <strong>地址:</strong> 山东省德州市德城区马化腾大街马化腾号,马化腾木业集团第二分公司 <br>
+
+                                </p>
+                            </li>
+                            <li>
+                                <i class="icon-phone"></i>
+                                <p><strong>电话:</strong> 0534-12345678</p>
+                            </li>
+                            <li>
+                                <i class="icon-envelope"></i>
+                                <p><strong>邮箱:</strong><a href="mailto:info@fifothemes.com">mahuateng@qq.com</a></p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="col-lg-3 col-md-3 col-xs-12 col-sm-3 footer-four">
+                        <h3></h3>
+                        <ul id="flickrfeed" class="thumbs"></ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </footer>
 </body>
 </html>
