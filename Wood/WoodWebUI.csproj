@@ -457,6 +457,7 @@
     <Content Include="Content\styles\user\fonts\font-awesome\font\fontawesome-webfontf77b.ttf" />
     <Content Include="Content\styles\user\fonts\font-awesome\font\fontawesome-webfontf77b.woff" />
     <Content Include="App_Data\数据库表.xls" />
+    <Content Include="App_Data\Wood.db" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
