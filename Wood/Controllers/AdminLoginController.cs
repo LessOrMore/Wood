@@ -19,6 +19,9 @@ namespace Wood.Controllers
         {
             var UserName = Request.Params["username"];
             var Password = Request.Params["password"];
+
+            
+
             return Json("OK");
         }
 

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{587BA7C0-FF7C-48D9-B96E-D12220D71A08}</ProjectGuid>
+    <ProjectGuid>{A9727030-0DC6-4D40-AF8C-D14C238F43AF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WoodModel</RootNamespace>
-    <AssemblyName>WoodModel</AssemblyName>
+    <RootNamespace>WoodData</RootNamespace>
+    <AssemblyName>WoodData</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
