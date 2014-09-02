@@ -29,7 +29,11 @@ function AjaxLogin(param) {
         url: "/AdminLogin/Login",
         data: param,
         success: function (msg) {
-            if (msg == "OK") {
+            var json = msg;
+            if (json.code>0) {
+                alert(json.message);
+            }
+            else {
                 window.location = "/AdminIndex/Index";
             }
         },

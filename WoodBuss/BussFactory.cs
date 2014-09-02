@@ -12,7 +12,7 @@ namespace WoodBuss
     public class BussFactory
     {
         #region 单例返回本身
-        public static BussFactory instanse;
+        private static BussFactory instanse;
         public static BussFactory Instance 
         {
             get 
@@ -27,6 +27,53 @@ namespace WoodBuss
         }
         #endregion 
 
+        #region  后台用户登录
+
+        private UserBuss userBuss;
+
+        public UserBuss UserBuss 
+        {
+            get 
+            {
+                if(userBuss==null)
+                { userBuss = new UserBuss(); }
+                return userBuss;
+            }
+        }
+
+        #endregion 
+
+        #region 菜单管理
+        private MenuBuss menuBuss;
+        public MenuBuss MenuBuss 
+        {
+            get 
+            {
+                if (menuBuss == null) 
+                {
+                    menuBuss = new MenuBuss();
+                }
+                return menuBuss;
+            }
+        }
+        #endregion
+
+
+        #region 信息设置
+        private CompanyBuss companyBuss;
+        public CompanyBuss CompanayBuss 
+        {
+            get 
+            {
+                if (companyBuss == null) 
+                {
+                    companyBuss = new CompanyBuss();
+                }
+                return companyBuss;
+            }
+        }
+
+        #endregion 
 
     }
 }

@@ -40,7 +40,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussFactory.cs" />
+    <Compile Include="CompanyBuss.cs" />
+    <Compile Include="MenuBuss.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserBuss.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WoodData\WoodData.csproj">
+      <Project>{a9727030-0dc6-4d40-af8c-d14c238f43af}</Project>
+      <Name>WoodData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WoodModel\WoodModel.csproj">
+      <Project>{587ba7c0-ff7c-48d9-b96e-d12220d71a08}</Project>
+      <Name>WoodModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

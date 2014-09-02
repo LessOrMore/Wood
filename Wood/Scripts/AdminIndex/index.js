@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿s$(document).ready(function () {
 
     $(".left").height($(window).height() - 93);
     $(".content").height($(window).height() - 93);

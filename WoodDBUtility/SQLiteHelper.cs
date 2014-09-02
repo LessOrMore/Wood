@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Net;
 using System.IO;
 using System.Web;
-namespace PlatformDBUtility
+namespace WoodDBUtility
 {
     public class SQLiteHelper
     {
@@ -15,7 +15,7 @@ namespace PlatformDBUtility
         //public static string connectionString = "Data Source=" + AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.ConnectionStrings["SqliteConnString"].ConnectionString;
         //public static string connectionString = "Data Source=" + ConfigurationManager.ConnectionStrings["SqliteConnString"].ConnectionString;
 
-        public static string connectionString = "DataSource="+HttpRuntime.AppDomainAppPath + "/App_Data/Wood.db";
+        public static string connectionString = "DataSource="+HttpRuntime.AppDomainAppPath + @"\App_Data\Wood.db";
         
         public SQLiteHelper() { }
 

@@ -160,6 +160,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AdminCompanyController.cs" />
     <Compile Include="Controllers\AdminIndexController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
     <Compile Include="Controllers\UserAboutController.cs" />
@@ -493,6 +494,7 @@
     <Content Include="Scripts\User\tytabs.js" />
     <Content Include="Scripts\User\waypoints.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\AdminCompany\form.html" />
     <Content Include="Views\UserAbout\about.html" />
     <Content Include="Views\UserConnectUs\contact.html" />
     <Content Include="Views\UserProduct\portfolio-four.html" />
@@ -519,6 +521,9 @@
     <Content Include="Views\UserProduct\ProductInfo.cshtml" />
     <Content Include="Views\UserConnectUs\ConnectUs.cshtml" />
     <Content Include="Views\UserAbout\About.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\AdminCompany\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -528,6 +533,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WoodBuss\WoodBuss.csproj">
+      <Project>{a8e36b0a-4909-4ea9-a436-79ddc58ca493}</Project>
+      <Name>WoodBuss</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WoodModel\WoodModel.csproj">
+      <Project>{587ba7c0-ff7c-48d9-b96e-d12220d71a08}</Project>
+      <Name>WoodModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
