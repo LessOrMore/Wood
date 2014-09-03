@@ -22,5 +22,14 @@ namespace WoodData
             if (list == null || list.Count < 1) { return null; }
             return list[0];
         }
+
+        public void UpdateCompany(CompanyModel companyModel)
+        {
+            string sql = string.Format(@"update Wood_CompanyInfo set CompanyName='{0}',CompanySummary='{1}',CompanyDes='{2}',
+            CompanyAddress = '{3}',CompanyTelePhone='{4}',  CompanyEmail = '{5}' where ID=1",companyModel.CompanyName,companyModel.CompanySummary,companyModel.CompanyDes
+                                                                                            ,companyModel.CompanyAddress,companyModel.CompanyTelephone,companyModel.CompanyEmail);
+
+            WoodDBUtility.SQLiteHelper.ExecuteSql(sql);
+        }
     }
 }

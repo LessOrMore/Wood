@@ -2,7 +2,7 @@
 @{
     Layout = null;
 }
-
+@model WoodModel.CompanyModel
 <!DOCTYPE html>
 
 <html>
@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width" />
     <title>公司信息编辑</title>
     <link href="../../Content/styles/admin/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/AdminCompnay/index.js"></script>
 </head>
 <body>
     <div class="place">
@@ -19,19 +22,32 @@
             <li><a href="#">公司信息</a></li>
         </ul>
     </div>
-
+   
     <div class="formbody">
 
         <div class="formtitle"><span>基本信息</span></div>
 
         <ul class="forminfo">
-            <li><label>公司名称</label><input name="" type="text" class="dfinput" style="width:300px" /><i>标题不能超过30个字符</i></li>
-            <li><label>公司简介</label><textarea name="" cols="1" rows="5" class="textinput"></textarea></li>
-            <li><label>详细介绍</label><textarea name="" cols="1" rows="10" class="textinput" style="height:150px"></textarea></li>
-            <li><label>公司地址</label><input name="" type="text" class="dfinput"/></li>
-            <li><label>公司电话</label><input name="" type="text" class="dfinput" /></li>
-            <li><label>公司邮箱</label><input name="" type="text" class="dfinput" /></li>
-            <li><label>&nbsp;</label><input name="" type="button" class="btn" value="确认保存" /></li>
+            <li><label>公司名称</label>
+                @Html.TextBoxFor(Model => Model.CompanyName, new { @class = "dfinput" })
+                <i>公司名称不能超过30个字符</i></li>
+            <li><label>公司简介</label>
+                @Html.TextAreaFor(Model => Model.CompanySummary, 5, 50, new { @class = "dfinput" })
+               </li>
+            <li><label>详细介绍</label>
+                @Html.TextAreaFor(Model => Model.CompanyDes, 10, 50, new { @class = "dfinput" })
+                </li>
+            <li><label>公司地址</label>
+                @Html.TextBoxFor(Model => Model.CompanyAddress, new { @class = "dfinput" })
+                </li>
+            <li><label>公司电话</label>
+                @Html.TextBoxFor(Model => Model.CompanyTelephone, new { @class = "dfinput" })
+                </li>
+            <li><label>公司邮箱</label>
+                @Html.TextBoxFor(Model => Model.CompanyEmail, new { @class = "dfinput" })
+                </li>
+            <li><label>&nbsp;</label>
+                <input name="" type="button" class="btn" value="确认保存" onclick="SaveCompany()" /></li>
         </ul>
     </div>
 </body>

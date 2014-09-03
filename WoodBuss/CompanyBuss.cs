@@ -22,5 +22,18 @@ namespace WoodBuss
                 return null;
             }
         }
+
+        //更新公司信息
+        public void UpdateCompanyInfo(WoodModel.CompanyModel companyModel, ref string errMsg)
+        {
+            try
+            {
+                WoodData.DataFactory.Instance.CompanyData.UpdateCompany(companyModel);
+            }
+            catch (Exception e) 
+            {
+                errMsg = e.Message;
+            }
+        }
     }
 }

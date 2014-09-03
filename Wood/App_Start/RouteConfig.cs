@@ -16,7 +16,7 @@ namespace Wood
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "UserIndex", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "AdminLogin", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

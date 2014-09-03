@@ -56,6 +56,7 @@ namespace WoodData
         }
         #endregion 
 
+        #region  公司信息管理
         private CompanyData companyData;
 
         public CompanyData CompanyData 
@@ -66,8 +67,9 @@ namespace WoodData
                 {
                     companyData = new CompanyData();
                 }
-                return;
+                return companyData;
             }
         }
+        #endregion 
     }
 }
