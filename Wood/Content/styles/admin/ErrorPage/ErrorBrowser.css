@@ -1,0 +1,50 @@
+﻿body {
+    background-color: #F7F7F7;
+}
+
+ .not-support-browser {
+    background-color: #FFFFFF;
+    border: 1px solid #CED0D3;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: 650px;
+    height: 350px;
+    margin: 100px auto;
+    padding: 0px;
+}
+
+.Learun-logo {
+    background-color: #808080;
+    padding:10px;
+    color:#FFFFFF;
+}
+
+.not-support-browser-contant {
+    color: #666666;
+    font-size: 18px;
+    margin: 35px 25px;
+    text-align: center;
+}
+
+
+.not-support-browser-contant ul {
+    display: inline-block;
+    list-style: none outside none;
+    margin: 35px 80px;
+    padding: 0px;
+}
+
+.not-support-browser-contant ul li {
+    float: left;
+    margin-left: 10px;
+}
+
+.not-support-browser-contant ul li a {
+    text-decoration: none;
+}
+
+.not-support-browser-contant ul li img {
+    width: 64px;
+    height: 64px;
+}

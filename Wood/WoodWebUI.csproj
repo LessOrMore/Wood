@@ -176,6 +176,7 @@
     <Compile Include="Controllers\AdminIndexController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
     <Compile Include="Controllers\AdminProductController.cs" />
+    <Compile Include="Controllers\AdminSystemController.cs" />
     <Compile Include="Controllers\UserAboutController.cs" />
     <Compile Include="Controllers\UserConnectUsController.cs" />
     <Compile Include="Controllers\UserIndexController.cs" />
@@ -6721,6 +6722,7 @@
     <Content Include="Scripts\Admin\AdminLogin\AdminLogin.js" />
     <Content Include="Scripts\Admin\AdminProduct\Product.js" />
     <Content Include="Scripts\Admin\AdminProduct\ProductType.js" />
+    <Content Include="Scripts\Admin\AdminSystem\MenuInfo.js" />
     <Content Include="Scripts\Admin\FunctionJS.js" />
     <Content Include="Content\styles\admin\themes\black\images\Thumbs.db" />
     <Content Include="Content\styles\admin\themes\bootstrap\images\Thumbs.db" />
@@ -6767,7 +6769,7 @@
     <Content Include="App_Data\Wood.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\jquery.easyui.min.js" />
+    <Content Include="Scripts\Admin\jquery.easyui.min.js" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -6839,6 +6841,7 @@
     <Content Include="Views\AdminIndex\Index.cshtml" />
     <Content Include="Views\AdminProduct\Product.cshtml" />
     <Content Include="Views\AdminProduct\ProductType.cshtml" />
+    <Content Include="Views\AdminSystem\MenuIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
