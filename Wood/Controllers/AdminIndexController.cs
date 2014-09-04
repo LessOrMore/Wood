@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using WoodModel;
+using WoodBuss;
 namespace Wood.Controllers
 {
     public class AdminIndexController : Controller
@@ -15,18 +16,16 @@ namespace Wood.Controllers
 
         public ActionResult Index()
         {
-            return View();
-        }
-        public ActionResult Left()
-        {
-            return View();
-        }
-        public ActionResult Right()
-        {
-            return View();
-        }
-        public ActionResult Top()
-        {
+            UserInfoModel UserInfo = Session["User"] as UserInfoModel;
+            ViewBag.UserInfo = UserInfo;
+
+            string errMsg = string.Empty;
+            List<MenuInfoModel> menuList = WoodBuss.BussFactory.Instance.MenuBuss.GetMenuList(ref errMsg);
+            if (!string.IsNullOrEmpty(errMsg)) 
+            {
+                menuList = new List<MenuInfoModel>();
+            }
+            ViewBag.MenuList = menuList;
             return View();
         }
 	}

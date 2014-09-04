@@ -13,5 +13,7 @@ namespace WoodModel
         public string MenuName{get;set;}
         public string Icon { get; set; }
         public string Url { get; set; }
+        public Int64 OrderID { get; set; }
+
     }
 }

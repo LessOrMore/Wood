@@ -1,112 +1,145 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
+@using WoodModel;
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>后台信息管理系统主页</title>
+    <title>主页面</title>
+    <link href="~/Content/styles/admin/accordion.css" rel="stylesheet" />
+    <link href="~/Scripts/artDialog/skins/blue.css" rel="stylesheet" />
 
-    <link href="~/Content/styles/admin/adminindex.css" rel="stylesheet" />
-    <link href="../../Content/styles/admin/style.css" rel="stylesheet" type="text/css" />
-
-
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/AdminIndex/index.js"></script>
+    <script src="~/Scripts/Admin/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/artDialog/artDialog.source.js"></script>
+    <script src="~/Scripts/artDialog/iframeTools.source.js"></script>
+    <script src="~/Scripts/Admin/FunctionJS.js"></script>
+    <script src="~/Scripts/Admin/AdminIndex/index.js"></script>
+  
 </head>
 <body>
 
-    <div>
-
-        <div class="top" style="background: url(../../Content/images/admin/topbg.gif) repeat-x;">
-            <div class="topleft">
-                <a href="/AdminCompany/Index" target="_parent"><img src="../../Content/images/admin/logo.png" title="系统首页" /></a>
+    <form id="form1" runat="server">
+        <div id="Container">
+            <div id="Header">
+                <div id="HeaderLogo">
+                    <img src="@Url.Content("~/Content/images/admin/logo1.png")" />
+                    <span>网站后台管理系统</span>
+                </div>
+                <div id="Headermenu">
+                    <ul id="topnav">
+                        <li id="metnav_1" class="list">
+                            <a href="javascript:;" id="nav_1" class="onnav" onclick="Replace();">
+                                <span class="c1"></span>首页信息
+                            </a>
+                        </li>
+                        <li id="metnav_5" class="list" onclick="IndexOut();">
+                            <a href="javascript:;" id="nav_4">
+                                <span class="c4"></span>安全退出
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="Headerbotton">
+                <div id="left_title">
+                    <img src="~/Content/images/admin/32/clock_32.png" alt="" width="20" height="20" style="vertical-align: middle;
+                    padding-bottom: 3px;" />
+                    <span id="datetime">1900年01月01日 00:00:00</span>
+                </div>
+                <div id="dww-menu" class="mod-tab">
+                    <div class="mod-hd" style="float: left">
+                        <ul class="tab-nav" id="tabs_container"></ul>
+                    </div>
+                    <div id="toolbar" style="float: right; width: 75px; padding-right: 5px; text-align: right;">
+                        <img src="~/Content/images/admin/16/arrow_refresh.png" title="刷新当前窗口" alt="" onclick="Loading(true);top.$('#' + Current_iframeID())[0].contentWindow.window.location.reload();return false;"
+                             width="16" height="16" style="padding-bottom: 3px; cursor: pointer; vertical-align: middle;" />
+                        &nbsp;
+                        <img id="full_screen" src="~/Content/images/admin/16/arrow_out.gif" title="最大化" alt=""
+                             onclick="Maximize();" width="16" height="16" style="padding-bottom: 3px; cursor: pointer;
+                        vertical-align: middle;" />
+                        &nbsp;
+                    </div>
+                </div>
             </div>
 
-            <ul class="nav">
-                <li><a href="/AdminCompany/Index" class="selected"><img src="../../Content/images/admin/icon01.png" title="公司信息" /><h2>公司信息</h2></a></li>
-                <li><a href="imgtable.html"><img src="../../Content/images/admin/icon02.png" title="产品类型" /><h2>模型管理</h2></a></li>
-                <li><a href="imglist.html"><img src="../../Content/images/admin/icon03.png" title="模块设计" /><h2>模块设计</h2></a></li>
-                <li><a href="tools.html"><img src="../../Content/images/admin/icon04.png" title="常用工具" /><h2>常用工具</h2></a></li>
-                <li><a href="computer.html"><img src="../../Content/images/admin/icon05.png" title="文件管理" /><h2>文件管理</h2></a></li>
-                <li><a href="tab.html"><img src="../../Content/images/admin/icon06.png" title="系统设置" /><h2>系统设置</h2></a></li>
-            </ul>
+            <div id="MainContent">
+                <div class="navigation">
 
-            <div class="topright">
-                <ul>
-                    <li><span><img src="../../Content/images/admin/help.png" title="帮助" class="helpimg" /></span><a href="#">帮助</a></li>
-                    <li><a href="#">关于</a></li>
-                    <li><a href="login.html" target="_parent">退出</a></li>
-                </ul>
+                    @{
+                        List<MenuInfoModel> menuList = ViewBag.MenuList as List<MenuInfoModel>;
+                        if (menuList == null)
+                        {
+                            return;
+                        }
 
-                <div class="user">
-                    <span>admin</span>
-                    <i>消息</i>
-                    <b>5</b>
+                        List<MenuInfoModel> FirstList = menuList.Where<MenuInfoModel>(model => model.ParentMenuID == -1).ToList();
+                        if (FirstList == null) { return; }
+
+                        int count = 0;
+                        foreach (MenuInfoModel item in FirstList)
+                        {
+                            count++;
+                            <ul class="accordion">
+                                <li>
+                                    @if (count == 1)
+                                    {
+                                        <a style="border-top: 0px solid #ccc;">
+                                            <img src="~/Content/images/admin/32/@item.Icon" />@item.MenuName
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a>
+                                            <img src="~/Content/images/admin/32/@item.Icon" />@item.MenuName
+                                        </a>
+                                    }
+                                    <div class="sub-menu">
+
+                                        @{
+                                    List<MenuInfoModel> SecondList = menuList.Where<MenuInfoModel>(model => model.ParentMenuID == item.MenuID).ToList();
+                                    if (SecondList == null) { return; }
+                                    foreach (MenuInfoModel item2 in SecondList)
+                                    {
+                                        <div onclick="AddTabMenu('@item2.MenuID', '@item2.Url', '@item2.MenuName','@item2.Icon', 'true');">
+                                            <img src="~/Content/images/admin/32/@item2.Icon">@item2.MenuName
+                                        </div>
+                                    }
+                                        }
+                                    </div>
+
+                                </li>
+                            </ul>
+                        }
+                    }
+                </div>
+
+                <div id="ContentPannel">
+
+                </div>
+            </div>
+            <div id="botton_toolbar">
+                <div style="width: 42%; text-align: left; float: left;">
+                    &nbsp;<a title="点击链接公司官网" href="http://www.zxgk.com/">技术支持：北京中讯威易</a> <span class="south-separator"></span>&nbsp;专业版 V2.0 <span class="south-separator">
+                    </span>&nbsp;<a title="将问题提交给中讯威易解决" target="_blank" href="#">问题反馈</a> <span class="south-separator"></span>
+                </div>
+                <div style="width: 16%; text-align: left; float: left;">
+                    <a title="  中讯威易  " href="javascript:void()">CopyRight © 2010-2014 By 中讯威易</a>
+                </div>
+                <div style="width: 42%; text-align: right; float: left;">
+                    <span class="south-separator">操作员:  @ViewBag.UserInfo.UserID</span>
+                    <span class="south-separator"></span>
                 </div>
             </div>
         </div>
-
-        <div class="left">
-            <div class="lefttop"><span></span>菜单</div>
-            <dl class="leftmenu" style="background: #f0f9fd">
-                <dd>
-                    <div class="title">
-                        <span><img src="../../Content/images/admin/leftico01.png" /></span>管理信息
-                    </div>
-                    <ul class="menuson">
-                        <li class="active"><cite></cite><div id="/AdminCompany/Index">公司信息</div><i></i></li>
-                        <li><cite></cite><div id="/AdminProduct/Product">产品类型</div><i></i></li>
-                        <li><cite></cite><div id="imgtable.html">图片数据表</div><i></i></li>
-                        <li><cite></cite><div id="form.html">添加编辑</div><i></i></li>
-                        <li><cite></cite><div id="imglist.html">图片列表</div><i></i></li>
-                        <li><cite></cite><div id="imglist1.html">自定义</div><i></i></li>
-                        <li><cite></cite><div id="tools.html">常用工具</div><i></i></li>
-                        <li><cite></cite><div id="filelist.html">信息管理</div><i></i></li>
-                        <li><cite></cite><div id="tab.html">Tab页</div><i></i></li>
-                        <li><cite></cite><div id="error.html">404页面</div><i></i></li>
-                    </ul>
-                </dd>
-                <dd>
-                    <div class="title">
-                        <span><img src="../../Content/images/admin/leftico02.png" /></span>其他设置
-                    </div>
-                    <ul class="menuson">
-                        <li><cite></cite><a href="#">编辑内容</a><i></i></li>
-                        <li><cite></cite><a href="#">发布信息</a><i></i></li>
-                        <li><cite></cite><a href="#">档案列表显示</a><i></i></li>
-                    </ul>
-                </dd>
-
-                <dd>
-                    <div class="title"><span><img src="../../Content/images/admin/leftico03.png" /></span>编辑器</div>
-                    <ul class="menuson">
-                        <li><cite></cite><a href="#">自定义</a><i></i></li>
-                        <li><cite></cite><a href="#">常用资料</a><i></i></li>
-                        <li><cite></cite><a href="#">信息列表</a><i></i></li>
-                        <li><cite></cite><a href="#">其他</a><i></i></li>
-                    </ul>
-                </dd>
-
-                <dd>
-                    <div class="title"><span><img src="../../Content/images/admin/leftico04.png" /></span>日期管理</div>
-                    <ul class="menuson">
-                        <li><cite></cite><a href="#">自定义</a><i></i></li>
-                        <li><cite></cite><a href="#">常用资料</a><i></i></li>
-                        <li><cite></cite><a href="#">信息列表</a><i></i></li>
-                        <li><cite></cite><a href="#">其他</a><i></i></li>
-                    </ul>
-
-                </dd>
-            </dl>
+        <!--载进度条start-->
+        <div id="loading" onclick="Loading(false);">
+            <img src="~/Content/images/admin/loading.gif" style="padding-bottom: 4px; vertical-align: middle;" />&nbsp;正在处理，请稍待&nbsp;
         </div>
-
-        <div class="content">
-
+        <div id="Toploading">
         </div>
-    </div>
+        <!--载进度条end-->
+    </form>
 </body>
 </html>
