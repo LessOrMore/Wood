@@ -158,6 +158,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminProductController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -165,7 +166,6 @@
     <Compile Include="Controllers\AdminCompanyController.cs" />
     <Compile Include="Controllers\AdminIndexController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
-    <Compile Include="Controllers\AdminProductController.cs" />
     <Compile Include="Controllers\AdminSystemController.cs" />
     <Compile Include="Controllers\UserAboutController.cs" />
     <Compile Include="Controllers\UserConnectUsController.cs" />
