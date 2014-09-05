@@ -6842,6 +6842,7 @@
     <Content Include="Views\AdminProduct\Product.cshtml" />
     <Content Include="Views\AdminProduct\ProductType.cshtml" />
     <Content Include="Views\AdminSystem\MenuIndex.cshtml" />
+    <Content Include="Views\AdminSystem\EditMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

@@ -15,5 +15,7 @@ namespace WoodModel
         public string Url { get; set; }
         public Int64 OrderID { get; set; }
 
+        public int Flag { get; set; }
+
     }
 }

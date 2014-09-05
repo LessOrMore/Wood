@@ -21,7 +21,7 @@ function BindData() {
     $.ajax({
         type: "POST",
         contentType: "application/json",
-        url: "/AdminSystem/GetMenuJson",
+        url: "/AdminSystem/GetMenuData",
         data: "{}",
         dataType: 'json',
         success: function (result) {
@@ -32,23 +32,23 @@ function BindData() {
 }
 
 function btnHandler(flag) {
-    var url = "/Menu/";
+    var url = "/AdminSystem/";
     var vname;
     if (flag == 0) {
         vname = "新增";
-        url += "Edit";
+        url += "EditMenu";
     }
     else if (flag == 1) {
         vname = "编辑";
-        url += "Edit";
+        url += "EditMenu";
     }
     else if (flag == 2) {
         vname = "删除";
-        url += "Delete";
+        url += "DeleteMenu";
     }
     else if (flag == 3) {
         vname = "查看";
-        url += "Read";
+        url += "ReadMenu";
     }
 
     var rows = $('#menuTable').datagrid('getSelections');
