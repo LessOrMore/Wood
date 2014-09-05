@@ -15,7 +15,7 @@ namespace WoodDBUtility
         //public static string connectionString = "Data Source=" + AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.ConnectionStrings["SqliteConnString"].ConnectionString;
         //public static string connectionString = "Data Source=" + ConfigurationManager.ConnectionStrings["SqliteConnString"].ConnectionString;
 
-        public static string connectionString = "DataSource="+HttpRuntime.AppDomainAppPath + @"\App_Data\Wood.db";
+        public static string connectionString = "Data Source="+HttpRuntime.AppDomainAppPath + @"\App_Data\Wood.db";
         
         public SQLiteHelper() { }
 

@@ -44,6 +44,10 @@ namespace Wood.Controllers
             string errMsg = string.Empty;
             string menuID = Request.QueryString["MenuID"];
             menu = BussFactory.Instance.MenuBuss.GetMenuModel(menuID, ref errMsg);
+            if(menu==null)
+            { 
+                menu = new MenuInfoModel(); 
+            }
             menu.Flag = 1; // 修改
             if (!string.IsNullOrEmpty(errMsg))
             {
@@ -70,11 +74,10 @@ namespace Wood.Controllers
 
 
         [HttpPost]
-        public ActionResult Edit(MenuInfoModel Menu)
+        public ActionResult EditMenu(MenuInfoModel Menu)
         {
             try
             {
-
                 string errMsg = string.Empty;
                 if (Menu != null && Menu.Flag == 0)
                 {
@@ -94,8 +97,7 @@ namespace Wood.Controllers
                     ViewBag.ErrMsg = errMsg;
                     return View(Menu);
                 }
-
-                return RedirectToAction("Edit", new { MenuID = Menu.MenuID });
+                return RedirectToAction("EditMenu", new { MenuID = Menu.MenuID });
             }
             catch
             {

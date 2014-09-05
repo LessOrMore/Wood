@@ -54,16 +54,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data.SQLite, Version=1.0.93.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\System.Data.SQLite.Core.1.0.93.0\lib\net45\System.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.EF6">
-      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.93.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.Linq">
-      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.93.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
-    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -6720,6 +6710,27 @@
     <Content Include="Scripts\Admin\AdminCompnay\index.js" />
     <Content Include="Scripts\Admin\AdminIndex\index.js" />
     <Content Include="Scripts\Admin\AdminLogin\AdminLogin.js" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\column-header-bg.png" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\column-header-over-bg.gif" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\cross.png" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\horiz-bg.png" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\horiz-slider-bg.png" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\loading.gif" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\page-first-gray.gif" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\page-last-gray.gif" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\page-next-gray.gif" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\page-prev-gray.gif" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\Refresh.gif" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\sort_asc.gif" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\sort_desc.gif" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\sprite.jpg" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\sprite.png" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\tick.png" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\vert-bg.png" />
+    <Content Include="Scripts\Admin\AdminPqGrid\images\vert-slider-bg.png" />
+    <Content Include="Scripts\Admin\AdminPqGrid\pqgrid.js" />
+    <Content Include="Scripts\Admin\AdminPqGrid\pqgrid.min.css" />
+    <Content Include="Scripts\Admin\AdminPqGrid\pqgrid.min.js" />
     <Content Include="Scripts\Admin\AdminProduct\Product.js" />
     <Content Include="Scripts\Admin\AdminProduct\ProductType.js" />
     <Content Include="Scripts\Admin\AdminSystem\MenuInfo.js" />
@@ -6770,12 +6781,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\Admin\jquery.easyui.min.js" />
-    <Content Include="x64\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x86\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\themes\black\images\Thumbs.db" />
     <Content Include="Content\themes\bootstrap\images\Thumbs.db" />
     <Content Include="Content\themes\default\images\Thumbs.db" />
@@ -6843,6 +6848,7 @@
     <Content Include="Views\AdminProduct\ProductType.cshtml" />
     <Content Include="Views\AdminSystem\MenuIndex.cshtml" />
     <Content Include="Views\AdminSystem\EditMenu.cshtml" />
+    <Content Include="Views\AdminIndex\Main.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

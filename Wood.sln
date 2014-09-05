@@ -15,6 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodDBUtility", "WoodDBUtil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodComman", "WoodComman\WoodComman.csproj", "{4604C0E9-8FD0-4234-AB08-6E8088E20E11}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ALibrary", "ALibrary", "{230B29B0-150C-43DF-AC7B-D53D22B85041}"
+	ProjectSection(SolutionItems) = preProject
+		ALibrary\System.Data.SQLite.DLL = ALibrary\System.Data.SQLite.DLL
+		ALibrary\System.Data.SQLite.lib = ALibrary\System.Data.SQLite.lib
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
