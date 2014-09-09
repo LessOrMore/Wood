@@ -1,0 +1,104 @@
+﻿
+@{
+    Layout = null;
+}
+@model WoodModel.CompanyModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>编辑公司信息</title>
+    <link href="~/Content/styles/admin/accordion.css" rel="stylesheet" />
+    <link href="~/Scripts/artDialog/skins/blue.css" rel="stylesheet" />
+    <link href="~/Content/styles/admin/style.css" rel="stylesheet" />
+
+    <script src="~/Scripts/Admin/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/artDialog/artDialog.source.js"></script>
+    <script src="~/Scripts/artDialog/iframeTools.source.js"></script>
+    <script src="~/Scripts/Admin/FunctionJS.js"></script>
+    <script src="~/Scripts/Admin/AdminCompnay/index.js"></script>
+</head>
+<body>
+
+    <div id="tb_basic" class="tabPanel" style="display: block;">
+        <table id="tb_basic" border="0" cellpadding="0" cellspacing="0" class="frm tabPanel" style="margin-top: 1px; border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); display: table;">
+            <tbody>
+                <tr>
+                    <th class="highlight">
+                        公司名称：
+                    </th>
+                    <td>
+                        @Html.TextBoxFor(Model => Model.CompanyName, new { @class = "txt",@style="width:200px" })
+                     
+                    </td>
+
+                </tr>
+                <tr>
+                    <th class="highlight" style="height:80px">
+                        公司简介：
+                    </th>
+                    <td>
+                            @Html.TextAreaFor(Model => Model.CompanySummary, new { @class = "txt",@style="height:80px;width:90%" })
+                        
+                    </td>
+
+                </tr>
+                <tr>
+                    <th class="highlight" style="height:130px">
+                        详细介绍：
+                    </th>
+                    <td>
+                        @Html.TextAreaFor(Model => Model.CompanyDes, new { @class = "txt",@style="height:130px;width:90%" })
+                    
+                    </td>
+
+                </tr>
+                <tr>
+                    <th class="highlight">
+                        公司地址：
+                    </th>
+                    <td>
+                            @Html.TextBoxFor(Model => Model.CompanyAddress, new { @class = "txt", @style = "width:200px" })
+
+                        
+                    </td>
+
+                </tr>
+                <tr>
+                    <th class="highlight">
+                        公司电话：
+                    </th>
+                    <td>
+                            @Html.TextBoxFor(Model => Model.CompanyTelephone, new { @class = "txt", @style = "width:200px" })
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <th class="highlight">
+                        公司邮箱：
+                    </th>
+                    <td>
+                         @Html.TextBoxFor(Model => Model.CompanyEmail, new { @class = "txt", @style = "width:200px" })
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="frmbottom">
+            <a onclick="SaveCompany();" id="Accept" class="l-btn" href="javascript:__doPostBack('Accept','')">
+                <span class="l-btn-left">
+                    <img src="/Content/images/admin/16/accept.png" alt="">确 认
+                </span>
+            </a>
+            <a class="l-btn" href="javascript:void(0)" onclick="OpenClose();">
+                <span class="l-btn-left">
+                    <img src="/Content/images/admin/16/cancel.png" alt="">关 闭
+                </span>
+            </a>
+        </div>
+
+</body>
+</html>

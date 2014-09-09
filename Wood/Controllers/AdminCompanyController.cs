@@ -21,6 +21,17 @@ namespace Wood.Controllers
             return View(companyModel);
         }
 
+        public ActionResult Edit()
+        {
+            string errMsg = string.Empty;
+            CompanyModel companyModel = WoodBuss.BussFactory.Instance.CompanayBuss.GetCompanyModel(ref errMsg);
+            if (!string.IsNullOrEmpty(errMsg))
+            {
+                companyModel = new CompanyModel();
+            }
+            return View(companyModel);
+        }
+        
         /// <summary>
         /// 跟新公司信息
         /// </summary>

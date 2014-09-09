@@ -16,7 +16,7 @@
     <script src="~/Scripts/Admin/jquery.easyui.min.js"></script>
     <script src="~/Scripts/Admin/AdminPqGrid/pqgrid.min.js"></script>
     <script src="~/Scripts/Admin/FunctionJS.js"></script>
-    <script src="~/Scripts/AdminCompnay/index.js"></script>
+    <script src="~/Scripts/Admin/AdminCompnay/index.js"></script>
 </head>
 <body>
     <div class="btnbartitle">
@@ -43,122 +43,71 @@
         <tbody>
             <tr>
                 <th class="highlight">
-                    编号：
+                    公司名称：
                 </th>
                 <td>
-                    <span id="Code">admin</span>
+                    <span id="CompanyName">
+                      @Html.Label(Model.CompanyName)
+                    </span>
                 </td>
                 
             </tr>
             <tr>
                 <th class="highlight">
-                    姓名：
+                    公司简介：
                 </th>
                 <td>
-                    <span id="RealName">佘赐雄</span>
+                    <span id="CompanySummary">
+                        @Html.Label(Model.CompanySummary)
+                    </span>
                 </td>
                
             </tr>
             <tr>
                 <th class="highlight">
-                    性别：
+                    详细介绍：
                 </th>
                 <td>
-                    <span id="Gender">男</span>
+                    <span id="CompanyDes">
+                        @Html.Label(Model.CompanyDes)
+                    </span>
                 </td>
                 
             </tr>
             <tr>
                 <th class="highlight">
-                    出生日期：
+                    公司地址：
                 </th>
                 <td>
-                    <span id="Birthday">2013/10/28 18:49:23</span>
+                    <span id="CompanyAddress">
+                        @Html.Label(Model.CompanyAddress)
+
+                    </span>
                 </td>
               
             </tr>
             <tr>
                 <th class="highlight">
-                    职位：
+                    公司电话：
                 </th>
                 <td>
-                    <span id="DutyId">工程师</span>
+                    <span id="CompanyTelephone">
+                        @Html.Label(Model.CompanyTelephone)
+                    </span>
                 </td>
                
             </tr>
             <tr>
                 <th class="highlight">
-                    职称：
+                    公司邮箱：
                 </th>
                 <td>
-                    <span id="TitleId">软件工程师</span>
-                </td>
-
-                
-            </tr>
-            <tr>
-
-                <th class="highlight">
-                    公司：
-                </th>
-                <td>
-                    <span id="CompanyId">上海分公司</span>
-                </td>
-              
-            </tr>
-            <tr>
-                <th class="highlight">
-                    部门名称：
-                </th>
-                <td>
-                    <span id="DepartmentId">IT信息部</span>
-                </td>
-                
-            </tr>
-            <tr>
-                <th class="highlight">
-                    有效性：
-                </th>
-                <td colspan="3">
-                    <span id="Enabled">是</span>
-                </td>
-            </tr>
-            <tr>
-                <th class="highlight">
-                    说明：
-                </th>
-                <td colspan="3">
-                    <span id="Description">测试</span>
+                    <span id="CompanyEmail">
+                        @Model.CompanyEmail
+                    </span>
                 </td>
             </tr>
         </tbody>
     </table>
-    @*<div class="formbody">
-
-        <div class="formtitle"><span>基本信息</span></div>
-
-        <ul class="forminfo">
-            <li><label>公司名称</label>
-                @Html.TextBoxFor(Model => Model.CompanyName, new { @class = "dfinput" })
-                <i>公司名称不能超过30个字符</i></li>
-            <li><label>公司简介</label>
-                @Html.TextAreaFor(Model => Model.CompanySummary, 5, 50, new { @class = "dfinput" })
-               </li>
-            <li><label>详细介绍</label>
-                @Html.TextAreaFor(Model => Model.CompanyDes, 10, 50, new { @class = "dfinput" })
-                </li>
-            <li><label>公司地址</label>
-                @Html.TextBoxFor(Model => Model.CompanyAddress, new { @class = "dfinput" })
-                </li>
-            <li><label>公司电话</label>
-                @Html.TextBoxFor(Model => Model.CompanyTelephone, new { @class = "dfinput" })
-                </li>
-            <li><label>公司邮箱</label>
-                @Html.TextBoxFor(Model => Model.CompanyEmail, new { @class = "dfinput" })
-                </li>
-            <li><label>&nbsp;</label>
-                <input name="" type="button" class="btn" value="确认保存" onclick="SaveCompany()" /></li>
-        </ul>
-    </div>*@
 </body>
 </html>

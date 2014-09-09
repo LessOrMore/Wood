@@ -10,99 +10,41 @@
     <meta name="viewport" content="width=device-width" />
 
     <title>产品类型</title>
+    <link href="../../Content/styles/admin/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Scripts/Admin/AdminPqGrid/pqgrid.min.css" rel="stylesheet" />
 
-    <link href="~/Content/styles/admin/style.css" rel="stylesheet" />
-    <link href="~/Content/themes/Styles/style.css" rel="stylesheet" />
-    <link href="~/Content/themes/metro/easyui.css" rel="stylesheet" />
-    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/Admin/jquery-1.8.2.min.js"></script>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/jquery.easyui.min.js"></script>
-
-    <script src="~/Scripts/AdminProduct/ProductType.js"></script>
+    <script src="~/Scripts/Admin/jquery.easyui.min.js"></script>
+    @*<script src="~/Scripts/Admin/AdminPqGrid/jquery-ui.min.js"></script>
+    <script src="~/Scripts/Admin/AdminPqGrid/pqgrid.js" charset="gbk"></script>*@
+    <script src="~/Scripts/Admin/FunctionJS.js"></script>
+    @*<script src="~/Scripts/Admin/AdminProduct/ProductType.js"></script>*@
 </head>
 <body>
     <div> 
 
-        <div class="place">
-            <span>位置：</span>
-            <ul class="placeul">
-                <li><a href="#">管理信息</a></li>
-                <li><a href="#">产品类型</a></li>
-            </ul>
-        </div>
-        <div style="padding:1px;">
-
-            <table id="deviceTable" class="easyui-datagrid" title="菜单信息列表"
-                    style="width: auto; height:auto" data-options="fit:true,fitColumns:true,rownumbers:true,singleSelect:true,iconCls: 'icon-search',method:'get',toolbar:'#tb',
-            pagination:true,url:'/AdminProduct/ProductJson/'">
-                <thead>
-                    <tr>
-                        <th data-options="field:'TypeID',width:60,align:'left'">
-                            类型ID
-                        </th>
-                        <th data-options="field:'TypeName',width:60,align:'left'">
-                            类型名称
-                        </th>
-                        <th data-options="field:'TypeCode',width:60,align:'left'">
-                            类型编号
-                        </th>
-                        <th data-options="field:'TypeLevel',width:60,align:'left'">
-                            类型级别
-                        </th>
-                    </tr>
-                </thead>
-            </table>
-
-            <div id="tb" style="padding: 5px; height: auto">
-                <table cellpadding="0" cellspacing="0" style="width: 100%">
-                    <tr>
-                        <td>
-                            <div>
-                                类型名称:
-                                <input id="userID" type="text" class="txtInput" />
-                                类型级别:
-                                <input id="gatewayID" type="text" class="txtInput" />
-
-                                <a href="#" class="easyui-linkbutton" iconcls="icon-search" onclick="DoSearch();">检索</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div style="margin-bottom: 5px;float:right">
-                                <ul class="toolbar">
-                                    <li onclick="btnHandler(0)" class="click"><span><img src="~/Content/images/admin/t01.png" /></span>添加</li>
-                                    <li onclick="btnHandler(1)" class="click" ><span><img src="~/Content/images/admin/t02.png"></span>修改</li>
-                                    <li onclick ="btnHandler(2)"><span><img src="~/Content/images/admin/t03.png"></span>删除</li>
-                                </ul>
-                                @*<a href="#" class="easyui-linkbutton" iconcls="icon-add" onclick="btnHandler(0)" plain="true">新增</a>
-                                <a href="#" class="easyui-linkbutton" iconcls="icon-edit" onclick="btnHandler(1)" plain="true">编辑</a>
-                                <a href="#" class="easyui-linkbutton" iconcls="icon-remove" onclick="btnHandler(2)" plain="true">删除</a>
-                                <a href="#" class="easyui-linkbutton" iconcls="rydw-icon-magnifier" onclick="btnHandler(3)" plain="true">查看</a>*@
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="tip">
-        <div class="tiptop"><span>提示信息</span><a></a></div>
-        <div class="tipinfo">
-            <span><img src="~/Content/images/admin/ticon.png" /></span>
-            <div class="tipright">
-                <p>是否确认对信息的修改 ？</p>
-                <cite>如果是请点击确定按钮 ，否则请点取消。</cite>
+        <div class="btnbartitle">
+            <div>
+                管理信息 - <span id="OrganizationName">产品类型</span>
             </div>
         </div>
 
-        <div class="tipbtn">
-            <input name="" type="button" class="sure" value="确定" />&nbsp;
-            <input name="" type="button" class="cancel" value="取消" />
+        <div class="tools_bar">
+            <a title="刷新当前页面" onclick="Replace();" class="tools_btn">
+                <span><b style="background: url('/Content/images/admin/16/arrow_refresh.png') 50% 4px no-repeat;">刷新</b></span>
+            </a><div class="tools_separator"></div>
+            <a title="" onclick="add();" class="tools_btn">
+                <span><b style="background: url('/Content/images/admin/16/application_add.png') 50% 4px no-repeat;">新增</b></span>
+            </a>
+            <a title="" onclick="edit();" class="tools_btn"><span class=""><b style="background: url('/Content/images/admin/16/application_edit.png') 50% 4px no-repeat;">编辑</b></span></a>
+            <a title="" onclick="Delete();" class="tools_btn"><span><b style="background: url('/Content/images/admin/16/application_delete.png') 50% 4px no-repeat;">删除</b></span></a>
+            <div class="tools_separator"></div>
+            <a title="关闭当前窗口" onclick="ThisCloseTab();" class="tools_btn">
+                <span class=""><b style="background: url('/Content/images/admin/16/back.png') 50% 4px no-repeat;">离开</b></span>
+            </a>
         </div>
-
+        <div id="grid_paging" style="margin-top: 1px;"></div>
     </div>
-
 </body>
 </html>

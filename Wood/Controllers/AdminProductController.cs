@@ -19,5 +19,10 @@ namespace Wood.Controllers
         {
             return View();
         }
+
+        public JsonResult ProductTypeDetails() 
+        {
+            return Json("");
+        }
 	}
 }
