@@ -11,15 +11,14 @@
 
     <title>产品类型</title>
     <link href="../../Content/styles/admin/style.css" rel="stylesheet" type="text/css" />
-    <link href="~/Scripts/Admin/AdminPqGrid/pqgrid.min.css" rel="stylesheet" />
+    <link href="~/Content/styles/admin/themes/gray/easyui.css" rel="stylesheet" />
+    <link href="~/Content/styles/admin/themes/icon.css" rel="stylesheet" />
 
     <script src="~/Scripts/Admin/jquery-1.8.2.min.js"></script>
 
     <script src="~/Scripts/Admin/jquery.easyui.min.js"></script>
-    @*<script src="~/Scripts/Admin/AdminPqGrid/jquery-ui.min.js"></script>
-    <script src="~/Scripts/Admin/AdminPqGrid/pqgrid.js" charset="gbk"></script>*@
     <script src="~/Scripts/Admin/FunctionJS.js"></script>
-    @*<script src="~/Scripts/Admin/AdminProduct/ProductType.js"></script>*@
+    <script src="~/Scripts/Admin/AdminProduct/ProductType.js"></script>
 </head>
 <body>
     <div> 
@@ -44,7 +43,39 @@
                 <span class=""><b style="background: url('/Content/images/admin/16/back.png') 50% 4px no-repeat;">离开</b></span>
             </a>
         </div>
-        <div id="grid_paging" style="margin-top: 1px;"></div>
+
+        <div id="grid_paging" style="margin-top: 1px;">
+            <table id="deviceTable" class="easyui-datagrid" title="产品类别"
+                   style="width: auto; height:auto" data-options="fit:true,fitColumns:true,rownumbers:true,singleSelect:true,iconCls: 'icon-search',method:'get',
+          pagination:true,url:'/AdminProduct/ProductTypeDetails/'">
+                <thead>
+                    <tr>                        
+                        <th data-options="field:'TypeID',width:60,align:'left'">
+                            类型编号
+                        </th>
+
+                        <th data-options="field:'ParentTypeID',width:200,align:'left'">
+                            父级编号
+                        </th>
+                        <th data-options="field:'ID',width:200,align:'left',width:200">
+                            设备ID
+                        </th>
+                        <th data-options="field:'DeviceTypeID',width:200,align:'left',hidden:true">
+                            设备类型
+                        </th>
+                        <th data-options="field:'DevTypeName',width:200,align:'left'">
+                            设备类型标识
+                        </th>
+                        <th data-options="field:'DevTypeDesc',width:200,align:'left'">
+                            设备类型名称
+                        </th>
+                        <th data-options="field:'Name',align:'left',width:'300'">
+                            设备名称
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
 </body>
 </html>
