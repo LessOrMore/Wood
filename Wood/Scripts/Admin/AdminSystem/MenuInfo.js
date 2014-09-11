@@ -55,7 +55,6 @@ function btnHandler(flag) {
     if (rows.length > 0 && flag != 0) {
         url += "?MenuID=" + rows[0]["MenuID"];
     }
-
     else if (rows.length < 1 && (flag != 0)) {
         showTipsMsg("请选择需要操作的数据后进行操作", 3000, 3);
         return;

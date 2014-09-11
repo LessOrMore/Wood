@@ -58,7 +58,7 @@ namespace Wood.Controllers
         public SelectList GetSelectedList()
         {
             string errMsg = string.Empty;
-            List<MenuInfoModel> menuList = BussFactory.Instance.MenuBuss.GetMenuList("-1", ref errMsg);
+            List<MenuInfoModel> menuList = BussFactory.Instance.MenuBuss.GetMenuList("1", ref errMsg);
             if (!string.IsNullOrEmpty(errMsg) && menuList == null)
             {
                 menuList = new List<MenuInfoModel>();
@@ -71,7 +71,6 @@ namespace Wood.Controllers
             SelectList list = new SelectList(menuList, "MenuID", "MenuName", "-1");
             return list;
         }
-
 
         [HttpPost]
         public ActionResult EditMenu(MenuInfoModel Menu)

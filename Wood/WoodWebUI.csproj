@@ -3624,6 +3624,7 @@
     <Content Include="Views\AdminSystem\EditMenu.cshtml" />
     <Content Include="Views\AdminIndex\Main.cshtml" />
     <Content Include="Views\AdminCompany\Edit.cshtml" />
+    <Content Include="Views\AdminProduct\ProductTypeEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

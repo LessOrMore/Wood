@@ -58,7 +58,6 @@ namespace WoodBuss
         }
         #endregion
 
-
         #region 信息设置
         private CompanyBuss companyBuss;
         public CompanyBuss CompanayBuss 
@@ -73,6 +72,21 @@ namespace WoodBuss
             }
         }
 
+        #endregion 
+
+        #region 产品
+        private ProductTypeBuss productType;
+        public ProductTypeBuss ProductTypeBuss 
+        {
+            get 
+            {
+                if (productType == null) 
+                {
+                    productType = new ProductTypeBuss();
+                }
+                return productType;
+            }
+        }
         #endregion 
 
     }

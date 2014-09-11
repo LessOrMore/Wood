@@ -42,6 +42,7 @@
     <Compile Include="BussFactory.cs" />
     <Compile Include="CompanyBuss.cs" />
     <Compile Include="MenuBuss.cs" />
+    <Compile Include="ProductTypeBuss.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserBuss.cs" />
   </ItemGroup>

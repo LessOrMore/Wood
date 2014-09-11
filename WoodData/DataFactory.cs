@@ -71,5 +71,20 @@ namespace WoodData
             }
         }
         #endregion 
+
+        #region 产品管理
+        private ProductTypeData productData;
+        public ProductTypeData ProductTypeData 
+        {
+            get 
+            {
+                if(ProductTypeData == null)
+                {
+                    productData = new ProductTypeData();
+                }
+                return productData;
+            }
+        }
+        #endregion 
     }
 }

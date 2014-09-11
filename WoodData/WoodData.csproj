@@ -46,6 +46,7 @@
     <Compile Include="CompanyData.cs" />
     <Compile Include="DataFactory.cs" />
     <Compile Include="MenuData.cs" />
+    <Compile Include="ProductTypeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserData.cs" />
   </ItemGroup>
