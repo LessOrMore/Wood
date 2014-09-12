@@ -3591,6 +3591,8 @@
     <Content Include="Scripts\User\tytabs.js" />
     <Content Include="Scripts\User\waypoints.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\AdminIndex\Main.cshtml" />
+    <Content Include="Views\AdminSystem\MenuIndex.cshtml" />
     <Content Include="Views\UserAbout\about.html" />
     <Content Include="Views\UserConnectUs\contact.html" />
     <Content Include="Views\UserProduct\portfolio-four.html" />
@@ -3620,9 +3622,7 @@
     <Content Include="Views\AdminIndex\Index.cshtml" />
     <Content Include="Views\AdminProduct\Product.cshtml" />
     <Content Include="Views\AdminProduct\ProductType.cshtml" />
-    <Content Include="Views\AdminSystem\MenuIndex.cshtml" />
     <Content Include="Views\AdminSystem\EditMenu.cshtml" />
-    <Content Include="Views\AdminIndex\Main.cshtml" />
     <Content Include="Views\AdminCompany\Edit.cshtml" />
     <Content Include="Views\AdminProduct\ProductTypeEdit.cshtml" />
   </ItemGroup>
