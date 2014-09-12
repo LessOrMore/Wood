@@ -3185,9 +3185,9 @@
     <Content Include="Content\images\user\testimonial\team-member-2.jpg" />
     <Content Include="Content\images\user\testimonial\team-member-3.jpg" />
     <Content Include="Content\styles\admin\accordion.css" />
+    <Content Include="Content\styles\admin\AdminLogin\login.css" />
     <Content Include="Content\styles\admin\desktop.css" />
     <Content Include="Content\styles\admin\ErrorPage\ErrorBrowser.css" />
-    <Content Include="Content\styles\admin\AdminLogin\login.css" />
     <Content Include="Content\styles\admin\pagination.css" />
     <Content Include="Content\styles\admin\ServerManager\ServerInfo.css" />
     <Content Include="Content\styles\admin\Site.css" />
