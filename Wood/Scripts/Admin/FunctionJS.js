@@ -269,10 +269,11 @@ function IsEditdata(id) {
     if (id == undefined || id == "") {
         isOK = false;
         showTipsMsg("很抱歉，您当前未选中任何一行！", 4000, 3);
-    } else if (id.split(",").length > 1) {
-        isOK = false;
-        showTipsMsg("很抱歉，一次只能选择一条记录！", 4000, 3);
     }
+    //} else if (id.split(",").length > 1) {
+    //    isOK = false;
+    //    showTipsMsg("很抱歉，一次只能选择一条记录！", 4000, 3);
+    //}
     return isOK;
 }
 function IsDelData(id) {

@@ -1,5 +1,4 @@
-﻿
-//新增
+﻿//新增
 function add() {
     var url = "/AdminProduct/ProductTypeEdit";
     top.openDialog(url, 'UserForm', '产品类型 - 添加', 600, 250, 50, 50);
