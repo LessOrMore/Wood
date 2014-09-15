@@ -62,8 +62,26 @@ namespace Wood.Controllers
             SelectList parentList = this.GetParentList();
             ViewBag.ParentList = parentList;
 
+            SelectList TypeLevel = this.GetTypeLevelList();
+            ViewBag.TypeLevel = TypeLevel;
+
+           
             ProductTypeModel typeModel = new ProductTypeModel();
+            typeModel.ErrMsg = string.Empty;
+
             return View(typeModel);
+        }
+        //获取Level
+        private SelectList GetTypeLevelList()
+        {
+            string errMsg = string.Empty;
+
+            List<object> levelList = new List<object>();
+            levelList.Add(new { ID=1,Name="一级"});
+            levelList.Add(new { ID = 2, Name = "二级" });
+
+            SelectList list = new SelectList(levelList, "ID", "Name", "-1");
+            return list;
         }
 
         //获取父类List
@@ -87,9 +105,38 @@ namespace Wood.Controllers
         [HttpPost]
         public ActionResult ProductTypeEdit(ProductTypeModel typeModel)
         {
-            return View(typeModel);
-        }
+            SelectList parentList = this.GetParentList();
+            ViewBag.ParentList = parentList;
 
+            SelectList TypeLevel = this.GetTypeLevelList();
+            ViewBag.TypeLevel = TypeLevel;
+
+            if (typeModel == null)
+            {
+                typeModel = new ProductTypeModel();
+                return View(typeModel);
+            }
+
+            string errMsg = string.Empty;
+            if (typeModel.Flag == 0) 
+            {
+                BussFactory.Instance.ProductTypeBuss.AddProductType(typeModel,ref errMsg);
+                typeModel.Flag = 1;
+                typeModel.ErrMsg = errMsg;
+            }
+            else if (typeModel.Flag == 1) 
+            {
+                BussFactory.Instance.ProductTypeBuss.EidtProductType(typeModel, ref errMsg);
+                typeModel.Flag = 1;
+                typeModel.ErrMsg = errMsg;
+            }
+            if (!string.IsNullOrEmpty(errMsg)) {
+                errMsg = "操作失败";
+            }
+            else { errMsg = "操作成功"; }
+            return View(typeModel);
+            
+        }
 
         #endregion
       

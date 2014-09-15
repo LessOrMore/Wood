@@ -963,15 +963,9 @@ function pqGridResizefixed(obj, lose_height, lose_width) {
 /**获取表格列值
 obj：ID，rowCode：列号
 **/
-function GetPqGridRowValue(obj_ID, rowCode) {
-    if (GetRowIndex != -1) {
-        var DM = $(obj_ID).pqGrid("option", "dataModel");
-        var data = DM.data;
-        return data[GetRowIndex][rowCode];
-    }
-    else {
-        return null;
-    }
+function GetGridRowValue(obj_ID) {
+    var DM = $(obj_ID).datagrid("getSelected");
+    return DM;
 }
 /**加载表格
 end

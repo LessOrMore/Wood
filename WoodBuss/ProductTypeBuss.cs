@@ -56,7 +56,48 @@ namespace WoodBuss
 
         public List<WoodModel.ProductTypeModel> GetTypeList(string parentTypeID, ref string errMsg)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return dal.GetTypeList(parentTypeID);
+            }
+            catch (Exception e) 
+            {
+                errMsg = e.Message;
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 添加产品类别
+        /// </summary>
+        /// <param name="typeModel"></param>
+        /// <param name="errMsg"></param>
+        public void AddProductType(WoodModel.ProductTypeModel typeModel, ref string errMsg)
+        {
+            try
+            {
+                dal.AddProductType(typeModel);
+            }
+            catch(Exception e)
+            {
+                errMsg = e.Message;
+            }
+        }
+        /// <summary>
+        /// 编辑产品类别
+        /// </summary>
+        /// <param name="typeModel"></param>
+        /// <param name="errMsg"></param>
+        public void EidtProductType(WoodModel.ProductTypeModel typeModel, ref string errMsg)
+        {
+            try
+            {
+                dal.EditProductType(typeModel);
+            }
+            catch (Exception e)
+            {
+                errMsg = e.Message;
+            }
         }
     }
 }

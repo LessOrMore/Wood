@@ -15,5 +15,6 @@ namespace WoodModel
         public Int64 TypeOrder { get; set; }
         public Int64 TypeLevel { get; set; }
         public Int64 Flag { get; set; }
+        public string ErrMsg { get; set; }
     }
 }

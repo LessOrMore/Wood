@@ -73,16 +73,16 @@ namespace WoodData
         #endregion 
 
         #region 产品管理
-        private ProductTypeData productData;
+        private ProductTypeData producttypeData;
         public ProductTypeData ProductTypeData 
         {
             get 
             {
-                if(ProductTypeData == null)
+                if (producttypeData == null)
                 {
-                    productData = new ProductTypeData();
+                    producttypeData = new ProductTypeData();
                 }
-                return productData;
+                return producttypeData;
             }
         }
         #endregion 

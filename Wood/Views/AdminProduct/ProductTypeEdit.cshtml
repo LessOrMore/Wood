@@ -48,7 +48,7 @@
                                 @Html.HiddenFor(model => model.Flag)
                                 @Html.HiddenFor(model => model.TypeID)
                                 @{
-                                        SelectList levelList = ViewBag.MenuList as SelectList;
+                                        SelectList levelList = ViewBag.TypeLevel as SelectList;
                                         @Html.DropDownListFor(model => model.TypeLevel, levelList);
                                 }
                             </td>
@@ -82,8 +82,16 @@
                             <th>
                                 排序编码：
                             </th>
-                            <td>
+                            <td colspan="3">
                                 @Html.TextBoxFor(model => model.TypeOrder)
+                            </td>
+                        </tr>
+                        <tr style="display:none">
+                            <th>
+                                returnMsg:
+                            </th>
+                            <td colspan="3">
+                                @Html.TextBoxFor(model => model.ErrMsg)
                             </td>
                         </tr>
                     </table>

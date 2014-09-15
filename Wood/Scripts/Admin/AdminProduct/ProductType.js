@@ -2,13 +2,15 @@
 //新增
 function add() {
     var url = "/AdminProduct/ProductTypeEdit";
-    top.openDialog(url, 'UserForm', '产品类型 - 添加', 750, 450, 50, 50);
+    top.openDialog(url, 'UserForm', '产品类型 - 添加', 600, 250, 50, 50);
 }
 //编辑
 function edit() {
-    var key = GetPqGridRowValue("#grid_paging", 0);
-    if (IsEditdata(key)) {
-        var url = "/AdminProduct/ProductTypeEdit?ProductTypeID=" + key;
+    var rows = GetGridRowValue("#producttypeTable");
+    if (IsEditdata(rows)) {
+        key = rows[0].TypeID;
+        var key = "";
+        var url = "/AdminProduct/ProductTypeEdit?TypeID=" + key;
         top.openDialog(url, 'UserForm', '用户信息 - 编辑', 750, 450, 50, 50);
     }
 }
@@ -28,6 +30,6 @@ function windowload() {
 
 //productEdit
 function Enter() {
-    
+    $("form").submit();
 }
 
